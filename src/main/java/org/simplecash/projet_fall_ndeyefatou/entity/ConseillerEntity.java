@@ -11,7 +11,12 @@ import java.util.ArrayList;
 @Entity
 @NoArgsConstructor
 @Getter @Setter
-@Table(name = "conseillers")
+@Table(
+        name = "conseillers",
+        uniqueConstraints = @UniqueConstraint(
+                columnNames = {"email", "telephone"}
+        )
+)
 public class ConseillerEntity {
 
     @Id

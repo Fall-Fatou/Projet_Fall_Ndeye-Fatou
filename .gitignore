@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+archi_diagram.puml
+class_diagram.puml
+flow_diagram.puml
+sequence_diagram.puml

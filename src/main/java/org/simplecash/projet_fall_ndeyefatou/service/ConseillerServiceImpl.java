@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.simplecash.projet_fall_ndeyefatou.dto.ConseillerCreateDto;
 import org.simplecash.projet_fall_ndeyefatou.dto.ConseillerDto;
+import org.simplecash.projet_fall_ndeyefatou.dto.ConseillerUpdateDto;
 import org.simplecash.projet_fall_ndeyefatou.entity.ConseillerEntity;
 import org.simplecash.projet_fall_ndeyefatou.mapper.ConseillerMapper;
 import org.simplecash.projet_fall_ndeyefatou.repository.ConseillerRepository;
@@ -41,4 +42,17 @@ public class ConseillerServiceImpl implements ConseillerService {
         ConseillerEntity saved = conseillerRepository.save(entity);
         return conseillerMapper.toDto(saved);
     }
+    @Override
+    public ConseillerDto patch(Long id, ConseillerUpdateDto dto) {
+
+        ConseillerEntity entity = conseillerRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Conseiller introuvable"));
+
+        conseillerMapper.partialUpdate(entity, dto);
+
+        ConseillerEntity saved = conseillerRepository.save(entity);
+
+        return conseillerMapper.toDto(saved);
+    }
+
 }

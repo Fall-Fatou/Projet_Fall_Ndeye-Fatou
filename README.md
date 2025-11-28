@@ -100,3 +100,6 @@ http://localhost:8080/swagger-ui/index.html#/
 - Simulation financière (prêts, découvert, épargne)
 - Gestion de l'audit et des rapports
 - Possibilité de modifier le conseiller d'un client
+
+# User Stories
+Issues github avec les user stories

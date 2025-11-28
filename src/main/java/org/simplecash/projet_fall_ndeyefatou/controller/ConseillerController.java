@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.simplecash.projet_fall_ndeyefatou.dto.ConseillerCreateDto;
 import org.simplecash.projet_fall_ndeyefatou.dto.ConseillerDto;
+import org.simplecash.projet_fall_ndeyefatou.dto.ConseillerUpdateDto;
 import org.simplecash.projet_fall_ndeyefatou.service.ConseillerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -63,4 +64,12 @@ public class ConseillerController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+    @PatchMapping("{id}")
+    public ResponseEntity<ConseillerDto> patch(
+            @PathVariable Long id,
+            @RequestBody ConseillerUpdateDto dto
+    ) {
+        return ResponseEntity.ok(conseillerService.patch(id, dto));
+    }
+
 }

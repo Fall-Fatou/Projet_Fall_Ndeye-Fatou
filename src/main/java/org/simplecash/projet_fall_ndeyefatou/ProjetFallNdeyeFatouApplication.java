@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ProjetFallNdeyeFatouApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProjetFallNdeyeFatouApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ProjetFallNdeyeFatouApplication.class, args);
+    }
 
 }

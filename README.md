@@ -70,9 +70,33 @@ L'application suit une architecture en couches :
 - **Controller** : exposition API REST  
 - **Service** : logique métier  
 - **Repository** : accès aux données  
-- **Entity** : représentation des objets persistés  
+- **Entity** : représentation des objets persistés
+- **DTO** : représentation des entités pour les échanges API
 
 ---
 
-# Diagramme de Classes  
+# Diagramme de Classes
+![class_diagram.png](class_diagram.png)
 
+# Diagramme de Cas d'Utilisation
+![archi_diagram.png](archi_diagram.png)
+
+---
+
+# Lancer le projet
+
+## 1. Cloner le dépôt
+```bash
+git clone <https://github.com/Fall-Fatou/Projet_Fall_Ndeye-Fatou.git>
+cd simplecash
+mvn spring-boot:run
+```
+L'application sera disponible sur : http://localhost:8080
+## 2. Accéder à la documentation API
+La documentation interactive Swagger est accessible à l'adresse suivante :
+http://localhost:8080/swagger-ui/index.html#/
+
+## 3. Axes d'amelioration futurs
+- Simulation financière (prêts, découvert, épargne)
+- Gestion de l'audit et des rapports
+- Possibilité de modifier le conseiller d'un client

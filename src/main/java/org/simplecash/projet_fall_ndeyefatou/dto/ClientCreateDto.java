@@ -19,7 +19,9 @@ public record ClientCreateDto(
         String postal_code,
 
         @NotBlank(message = "Client city should not be empty!")
-        String city
+        String city,
+
+        Long conseillerId
 ) {
 
 }

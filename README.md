@@ -92,9 +92,12 @@ cd simplecash
 mvn spring-boot:run
 ```
 L'application sera disponible sur : http://localhost:8080
+
 ## 2. Accéder à la documentation API
 La documentation interactive Swagger est accessible à l'adresse suivante :
 http://localhost:8080/swagger-ui/index.html#/
+### Limites du swagger :
+Sur Rester, les requêtes s'exécutent correctement mais quand je les tests sur le swagger j'obtiens des 404. 
 
 ## 3. Axes d'amelioration futurs
 - Simulation financière (prêts, découvert, épargne)

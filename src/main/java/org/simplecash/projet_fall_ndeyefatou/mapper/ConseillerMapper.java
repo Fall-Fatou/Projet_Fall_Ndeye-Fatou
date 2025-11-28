@@ -10,5 +10,6 @@ public interface ConseillerMapper {
     ConseillerDto toDto(ConseillerEntity conseiller);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "clients", ignore = true)
     ConseillerEntity toEntity(ConseillerCreateDto dto);
 }

@@ -1,8 +1,6 @@
 package org.simplecash.projet_fall_ndeyefatou.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,6 +9,7 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @Getter @Setter
+@Table(name = "clients")
 public class ClientEntity {
     @Id
     @GeneratedValue
@@ -33,6 +32,10 @@ public class ClientEntity {
 
     @NotBlank(message = "Client city should not be empty!")
     private String city;
+
+    @ManyToOne
+    @JoinColumn(name = "conseiller_id")
+    private ConseillerEntity conseiller;
 
     public ClientEntity(String name, String surname, String address, String telephone, String postal_code, String city) {
         this.name = name;

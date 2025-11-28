@@ -1,6 +1,7 @@
 package org.simplecash.projet_fall_ndeyefatou.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record ClientCreateDto(
         @NotBlank(message = "Client surname should not be empty!")
@@ -19,7 +20,9 @@ public record ClientCreateDto(
         String postal_code,
 
         @NotBlank(message = "Client city should not be empty!")
-        String city
-) {
+        String city,
 
+        @NotNull(message = "conseillerId is required")
+        Long conseillerId
+) {
 }

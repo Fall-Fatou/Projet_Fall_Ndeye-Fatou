@@ -12,9 +12,11 @@ public interface ClientMapper {
     ClientDto toClientDto(ClientEntity clientEntity);
 
     @Mapping(target ="id", ignore = true)
+    @Mapping(target = "conseiller", ignore = true)
     ClientEntity toClientEntity(ClientCreateDto clientDto);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "conseiller", ignore = true)
     void updateEntity(@MappingTarget ClientEntity entity, ClientUpdateDto dto);
 }
